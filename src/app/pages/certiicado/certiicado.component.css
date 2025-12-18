@@ -1,0 +1,126 @@
+.menu-certificado {
+  max-width: 800px;
+  width: 100%;
+}
+
+.btn-voltar {
+  gap: 6px;
+}
+
+.btn-voltar p {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  vertical-align: center;
+  color: #64748b;
+}
+
+.btn-voltar i {
+  font-size: 20px;
+  color: #64748b;
+}
+
+.certificado {
+  margin-top: 32px;
+  background-image: url("../../../../public/certificado/certificate_bg.png");
+  width: 800px;
+  height: 550px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+  position: relative;
+}
+
+.conteudo-certificado {
+  width: 720px;
+  height: 470px;
+  background-color: #fff;
+  border-radius: 8px;
+  position: relative;
+}
+
+.icone-medalha {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+}
+
+.info-certificado {
+  margin: 64px 40px auto 40px;
+  gap: 20px;
+}
+
+.titulo-subtitulo-certificado h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 160%;
+  letter-spacing: 10%;
+  color: #1a2856;
+  text-transform: uppercase;
+}
+
+.titulo-subtitulo-certificado p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  letter-spacing: 0;
+  margin: 0;
+  color: #121621;
+}
+
+.nome-aluno {
+  text-align: center;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 80px;
+  letter-spacing: 0;
+  margin: 0;
+  color: #3b5ac2;
+}
+
+.lista-atividade {
+  max-width: 413px;
+}
+
+.lista-atividade-titulo {
+  text-align: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  letter-spacing: 0;
+  color: #121621;
+}
+
+.lista-atividade {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  letter-spacing: 0;
+  margin: 0;
+  color: #121621;
+}
+
+.data-emissao {
+  text-align: center;
+  font-weight: 700;
+  font-size: 11.2px;
+  line-height: 160%;
+  letter-spacing: 0;
+  color: #121621;
+  margin-top: 32px;
+  text-align: center;
+}
+
+.assinatura {
+  position: absolute;
+  bottom: 24px;
+  right: 40px;
+  max-width: 64px;
+  max-height: 64px;
+}
