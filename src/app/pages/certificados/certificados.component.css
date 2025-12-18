@@ -58,3 +58,7 @@
   letter-spacing: 0;
   color: #64748b;
 }
+
+.custom-items {
+  max-width: 672px;
+}

@@ -11,7 +11,3 @@
   border-radius: 8px;
   margin-bottom: 8px;
 }
-
-.custom-card:last-child {
-  margin-bottom: 0;
-}
