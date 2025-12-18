@@ -22,3 +22,8 @@
   margin-bottom: 32px;
   text-align: center;
 }
+
+body {
+  font-family: "Inter", sans-serif !important;
+  font-optical-sizing: auto !important;
+}
