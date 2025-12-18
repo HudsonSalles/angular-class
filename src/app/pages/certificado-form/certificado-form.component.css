@@ -7,11 +7,6 @@
   border: 1px solid #e2e8f0;
 }
 
-.custom-card input {
-  border: 1px solid #e2e8f0;
-  height: 40px;
-}
-
 .card-title {
   font-weight: 700;
   font-size: 18px;
@@ -60,4 +55,37 @@ label {
 .remove-btn:hover i {
   background-color: #e2e8f0;
   transition: all 0.2s ease-in-out;
+}
+
+.custom-input {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  height: 40px;
+}
+
+.custom-input:focus {
+  border: 1px solid #3b5ac2;
+  box-shadow: none;
+}
+
+.custom-input-group:has(input:focus) label {
+  color: #3b5ac2;
+}
+
+.error-message {
+  gap: 4px;
+  color: #d71d1d;
+  margin-top: 4px;
+}
+
+.error-message p {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+
+.custom-input-group:has(.error-message) > label {
+  color: #d71d1d;
 }
