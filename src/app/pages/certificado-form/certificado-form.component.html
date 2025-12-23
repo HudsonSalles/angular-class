@@ -15,6 +15,7 @@
         type="text"
         class="form-control custom-input"
         placeholder="Nome do aluno"
+        [(ngModel)]="nome"
       />
       <div class="error-message d-flex align-items-center">
         <i class="ph ph-warning-circle"></i>
@@ -30,6 +31,7 @@
           type="text"
           class="form-control custom-input"
           placeholder="Atividade exercida"
+          [(ngModel)]="ativade"
         />
       </div>
       <app-secondary-button></app-secondary-button>
@@ -38,14 +40,17 @@
     <div class="atividade-group">
       <label class="form-label">Lista de atividade</label>
       <div class="item-list w-100">
+        @for (atividade of atividades; track $index){
+
         <div class="item d-flex align-items-center justify-content-between">
-          <span class="item-text">Configuração com Angular CLI</span>
+          <span class="item-text">{{ atividade }}</span>
           <div class="remove-btn">
             <i class="ph-bold ph-x"></i>
           </div>
         </div>
-
+        @if($index + 1 != atividades.length){
         <hr />
+        } }
       </div>
     </div>
 
