@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { SecondaryButtonComponent } from '../../_components/secondary-button/secondary-button.component';
 
 @Component({
-  selector: 'app-certiicado',
+  selector: 'app-certificado',
   imports: [SecondaryButtonComponent],
-  templateUrl: './certiicado.component.html',
-  styleUrl: './certiicado.component.css',
+  templateUrl: './certificado.component.html',
+  styleUrl: './certificado.component.css',
 })
-export class CertiicadoComponent {}
+export class CertificadoComponent {}
