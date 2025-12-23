@@ -6,7 +6,7 @@
     </div>
     <div>
       <app-secondary-button
-        [routerLink]="['/certificados', 1]"
+        (click)="redirecionaCertificado(id)"
         label="Baixar"
       ></app-secondary-button>
     </div>
