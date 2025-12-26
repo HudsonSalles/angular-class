@@ -37,12 +37,15 @@ export class CertificadoFormComponent {
 
   formValido() {
     return (
-      (this.certificado?.nome?.length ?? 0) > 0 && 
+      (this.certificado?.nome?.length ?? 0) > 0 &&
       (this.certificado?.atividades?.length ?? 0) > 0
     );
   }
 
   adicionarAtividade() {
+    if (!this.atividade || this.atividade.length == 0) {
+      return;
+    }
     this.certificado.atividades.push(this.atividade);
     this.atividade = '';
   }
