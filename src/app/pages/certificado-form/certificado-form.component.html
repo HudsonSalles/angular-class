@@ -53,7 +53,8 @@
         [textoBotao]="'Adicionar'"
         [icon]="'ph ph-plus'"
         [disabled]="ativade.length == 0"
-      ></app-secondary-button>
+        (click)="adicionarAtividade()"
+      />
     </div>
 
     <div class="atividade-group">
@@ -63,7 +64,7 @@
 
         <div class="item d-flex align-items-center justify-content-between">
           <span class="item-text">{{ atividade }}</span>
-          <div class="remove-btn">
+          <div (click)="removerAtividade($index)" class="remove-btn">
             <i class="ph-bold ph-x"></i>
           </div>
         </div>
@@ -76,6 +77,6 @@
     <app-primary-button
       [disabled]="!formValido()"
       textoBotao="Gerar Certificado"
-    ></app-primary-button>
+    />
   </div>
 </form>

@@ -18,7 +18,7 @@ import { SecondaryButtonComponent } from '../../_components/secondary-button/sec
 export class CertificadoFormComponent {
   nome: string = '';
   ativade: string = '';
-  atividades: string[] = ['teste 1', 'teste 2', 'teste 3'];
+  atividades: string[] = [];
 
   campoInvalido(control: NgModel) {
     return control.invalid && control.touched;
@@ -26,5 +26,16 @@ export class CertificadoFormComponent {
 
   formValido() {
     return this.nome.length > 0 && this.atividades.length > 0;
+  }
+
+  adicionarAtividade() {
+    if (this.ativade.length > 0) {
+      this.atividades.push(this.ativade);
+      this.ativade = '';
+    }
+  }
+
+  removerAtividade(index: number) {
+    this.atividades.splice(index, 1);
   }
 }
