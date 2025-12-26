@@ -42,7 +42,7 @@
           type="text"
           class="form-control custom-input"
           placeholder="Atividade exercida"
-          [(ngModel)]="ativade"
+          [(ngModel)]="atividade"
           #atividadeRef="ngModel"
           minlength="10"
           maxlength="50"
@@ -52,8 +52,8 @@
       <app-secondary-button
         [textoBotao]="'Adicionar'"
         [icon]="'ph ph-plus'"
-        [disabled]="ativade.length == 0"
         (click)="adicionarAtividade()"
+        [disabled]="!atividade || atividade.length == 0"
       />
     </div>
 

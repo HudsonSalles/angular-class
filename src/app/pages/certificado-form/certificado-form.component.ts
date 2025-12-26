@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { v4 as uuidv4 } from 'uuid';
 import { Certificado } from '../../_components/interfaces/certificado';
 import { PrimaryButtonComponent } from '../../_components/primary-button/primary-button.component';
 import { SecondaryButtonComponent } from '../../_components/secondary-button/secondary-button.component';
@@ -20,12 +21,15 @@ import { CertificadoService } from './../../_services/certificado.service';
 export class CertificadoFormComponent {
   constructor(private certificadoService: CertificadoService) {}
 
-  ativade: string = '';
+  @ViewChild('form') form!: NgForm;
+
   certificado: Certificado = {
-    nome: '',
+    id: '',
     atividades: [],
+    nome: '',
     dataEmissao: '',
   };
+  atividade: string = '';
 
   campoInvalido(control: NgModel) {
     return control.invalid && control.touched;
@@ -33,16 +37,14 @@ export class CertificadoFormComponent {
 
   formValido() {
     return (
-      this.certificado?.nome.length > 0 &&
-      this.certificado?.atividades.length > 0
+      (this.certificado?.nome?.length ?? 0) > 0 && 
+      (this.certificado?.atividades?.length ?? 0) > 0
     );
   }
 
   adicionarAtividade() {
-    if (this.ativade.length > 0) {
-      this.certificado.atividades.push(this.ativade);
-      this.ativade = '';
-    }
+    this.certificado.atividades.push(this.atividade);
+    this.atividade = '';
   }
 
   removerAtividade(index: number) {
@@ -53,12 +55,12 @@ export class CertificadoFormComponent {
     if (!this.formValido()) {
       return;
     }
-    this.certificado = {
-      nome: this.certificado.nome,
-      atividades: this.certificado.atividades,
-      dataEmissao: this.dataAtual(),
-    };
+    this.certificado.dataEmissao = this.dataAtual();
+    this.certificado.id = uuidv4();
     this.certificadoService.adicionarCertificado(this.certificado);
+
+    this.certificado = this.estadoInicialCertificado();
+    this.form.resetForm();
   }
 
   dataAtual(): string {
@@ -69,5 +71,14 @@ export class CertificadoFormComponent {
 
     const dataFormatada = `${dia}/${mes}/${ano}`;
     return dataFormatada;
+  }
+
+  estadoInicialCertificado(): Certificado {
+    return {
+      id: '',
+      atividades: [],
+      nome: '',
+      dataEmissao: '',
+    };
   }
 }
