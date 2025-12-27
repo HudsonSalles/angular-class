@@ -4,10 +4,17 @@
       <i class="ph ph-arrow-left"></i>
       <p class="m-0">Voltar</p>
     </div>
-    <app-secondary-button textoBotao="Download" icon="ph ph-download-simple" />
+    <app-secondary-button
+      textoBotao="Download"
+      icon="ph ph-download-simple"
+      (click)="downloadCertificado()"
+    />
   </div>
   @if(certificado) {
-  <div class="certificado d-flex justify-content-center align-items-center">
+  <div
+    #certificadoContainer
+    class="certificado d-flex justify-content-center align-items-center"
+  >
     <img
       src="certificado/certificate_ribbon.png"
       alt="medalha"
