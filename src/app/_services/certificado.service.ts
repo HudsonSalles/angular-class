@@ -12,6 +12,5 @@ export class CertificadoService {
   adicionarCertificado(certificado: Certificado) {
     this.certificados.unshift({ ...certificado });
     localStorage.setItem('certificados', JSON.stringify(this.certificados));
-    console.log(this.certificados);
   }
 }
