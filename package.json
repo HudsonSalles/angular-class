@@ -24,6 +24,9 @@
     "uuid": "^13.0.0",
     "zone.js": "~0.15.0"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.2.19",
     "@angular/cli": "^19.2.19",
