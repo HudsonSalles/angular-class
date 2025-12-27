@@ -4,8 +4,9 @@
       <i class="ph ph-arrow-left"></i>
       <p class="m-0">Voltar</p>
     </div>
-    <app-secondary-button textoBotao="Download" />
+    <app-secondary-button textoBotao="Download" icon="ph ph-download-simple" />
   </div>
+  @if(certificado) {
   <div class="certificado d-flex justify-content-center align-items-center">
     <img
       src="certificado/certificate_ribbon.png"
@@ -26,21 +27,19 @@
           </p>
         </div>
 
-        <p class="nome-aluno m-0">Nome do Aluno</p>
+        <p class="nome-aluno m-0">{{ certificado.nome }}</p>
 
         <div>
           <p class="lista-atividade-titulo">
             Concluiu com sucesso as seguintes atividades:
           </p>
           <p class="lista-atividade">
-            Introdução ao Angular, Configuração com Angular CLI, Criação de
-            componentes reutilizáveis, Manipulação de dados, Implementação de
-            data binding, Criação de rotas com Angular Router, Consumo de APIs
-            REST
+            {{ certificado.atividades.join(", ") }}
           </p>
         </div>
       </div>
-      <p class="data-emissao">Emitido em 01/01/2024</p>
+      <p class="data-emissao">Emitido em {{ certificado.dataEmissao }}</p>
     </div>
   </div>
+  }
 </div>

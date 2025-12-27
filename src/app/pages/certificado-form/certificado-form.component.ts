@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { Router } from '@angular/router';
 import { v4 as uuidv4 } from 'uuid';
 import { Certificado } from '../../_components/interfaces/certificado';
 import { PrimaryButtonComponent } from '../../_components/primary-button/primary-button.component';
@@ -19,7 +20,10 @@ import { CertificadoService } from './../../_services/certificado.service';
   styleUrl: './certificado-form.component.css',
 })
 export class CertificadoFormComponent {
-  constructor(private certificadoService: CertificadoService) {}
+  constructor(
+    private certificadoService: CertificadoService,
+    private route: Router
+  ) {}
 
   @ViewChild('form') form!: NgForm;
 
@@ -61,6 +65,8 @@ export class CertificadoFormComponent {
     this.certificado.dataEmissao = this.dataAtual();
     this.certificado.id = uuidv4();
     this.certificadoService.adicionarCertificado(this.certificado);
+
+    this.route.navigate(['/certificados/', this.certificado.id]);
 
     this.certificado = this.estadoInicialCertificado();
     this.form.resetForm();
